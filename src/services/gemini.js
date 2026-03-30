@@ -81,10 +81,11 @@ You are provided with:
 2. The Written Assignment the student submitted (attached PDF).
 3. A set of 3 specific questions designed to verify understanding, along with the student's live verbal answers.
 
-CRITICAL CONSTRAINTS FOR FAIRNESS:
-1. Human Memory & Pressure: A student verbally stumbling, saying "I don't remember that detail", or struggling to understand an overly sophisticated question is normal human behavior under a timed exam. This alone does NOT prove AI use.
-2. Focus on "Voice" and "Reasoning": Evaluate if their spoken thought process logically aligns with the core thesis of their written work. 
-3. The discrepancy between a highly polished written paper and nervous/simple speech is very common. However, if the written paper uses advanced concepts the student clearly has absolutely zero foundational understanding of when pressed, THEN the probability is HIGH.
+CRITICAL CONSTRAINTS FOR FAIRNESS - ASSUME HUMAN BY DEFAULT:
+1. DEFAULT TO LOW PROBABILITY: Always assume the student is human. If the submitted assignment itself is simple and the verbal answers are simple but broadly relevant, the probability is strictly LOW. Give the student the absolute benefit of the doubt.
+2. PREVENT FALSE POSITIVES: A student giving a very short, simple, clumsy, or nervous answer under a 10-minute exam timer is completely normal human behavior. Do NOT flag this as AI use. 
+3. FOCUS ON "CORE ALIGNMENT", NOT POLISH: Evaluate if their spoken thought process roughly aligns with the core idea of their written work. If it does, score LOW.
+4. UNDENIABLE PROOF REQUIRED FOR HIGH: Only assign a HIGH probability if there is extreme, undeniable proof of deception—for example, the written paper uses postgraduate-level theories that the student verbally proves they have absolutely zero comprehension of.
 
 Context / Syllabus text:
 ${contextText || "No context text provided"}
