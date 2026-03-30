@@ -117,7 +117,7 @@ export default function FacultySetup({ initialConfig, onStartExam }) {
           disabled={isLoading}
           className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-indigo-700 transition disabled:opacity-50"
         >
-          {isLoading ? "Reading Files..." : "Generate AI-Resistant Questions & Start Exam"}
+          {isLoading ? "Reading Files..." : "Generate AI-Resistant Question & Start Exam"}
         </button>
       </div>
     </div>

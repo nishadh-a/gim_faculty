@@ -28,8 +28,8 @@ function App() {
         setupData.assignmentFileBase64
       );
       
-      if (!Array.isArray(questions) || questions.length !== 3) {
-        throw new Error("AI did not return exactly 3 questions. Try again.");
+      if (!Array.isArray(questions) || questions.length !== 1) {
+        throw new Error("AI did not return exactly 1 question. Try again.");
       }
 
       setConfig(prev => ({ ...prev, questions }));
@@ -80,7 +80,7 @@ function App() {
           <div className="flex flex-col items-center justify-center py-20 flex-1">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mb-6"></div>
             <h2 className="text-2xl font-semibold">Gemini is reading the Context and Assignment...</h2>
-            <p className="text-gray-500 mt-2">Generating 3 highly-targeted, AI-resistant questions.</p>
+            <p className="text-gray-500 mt-2">Generating a highly-targeted, AI-resistant question.</p>
           </div>
         )}
         

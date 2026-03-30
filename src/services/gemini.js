@@ -21,8 +21,8 @@ function buildParts(textPrompt, contextFilesBase64 = [], assignmentFileBase64 = 
 
 export async function generateQuestions(apiKey, contextText, contextFilesBase64, assignmentFileBase64) {
   const prompt = `
-You are an expert academic evaluator. Your task is to generate exactly 3 "AI-resistant" questions based on the provided course context and the student's submitted assignment. 
-These questions will be asked verbally to the student to verify that they actually wrote the assignment and deeply understand it. 
+You are an expert academic evaluator. Your task is to generate exactly 1 "AI-resistant" question based on the provided course context and the student's submitted assignment. 
+This question will be asked verbally to the student to verify that they actually wrote the assignment and deeply understand it. 
 
 CRITICAL CONSTRAINTS:
 1. Match the complexity of the questions strictly to the student's own vocabulary and the course level. Do not formulate overly sophisticated or academic questions that might confuse a diligent student under time pressure.
@@ -32,11 +32,9 @@ CRITICAL CONSTRAINTS:
 Context/Syllabus instructions:
 ${contextText || "No additional text context provided. See attached PDFs if any."}
 
-Generate exactly 3 questions. Return the response STRICTLY as a JSON array answering this format:
+Generate exactly 1 question. Return the response STRICTLY as a JSON array answering this format:
 [
-  { "id": 1, "text": "Question 1..." },
-  { "id": 2, "text": "Question 2..." },
-  { "id": 3, "text": "Question 3..." }
+  { "id": 1, "text": "Question 1..." }
 ]
 `;
 
@@ -79,7 +77,7 @@ You are an expert academic evaluator. Your task is to detect the likelihood that
 You are provided with:
 1. The Syllabus / Course Context (provided context text and attached PDFs).
 2. The Written Assignment the student submitted (attached PDF).
-3. A set of 3 specific questions designed to verify understanding, along with the student's live verbal answers.
+3. A specific question designed to verify understanding, along with the student's live verbal answer.
 
 CRITICAL CONSTRAINTS FOR FAIRNESS - ASSUME HUMAN BY DEFAULT:
 1. DEFAULT TO LOW PROBABILITY: Always assume the student is human. If the submitted assignment itself is simple and the verbal answers are simple but broadly relevant, the probability is strictly LOW. Give the student the absolute benefit of the doubt.
